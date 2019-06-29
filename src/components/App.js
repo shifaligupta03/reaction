@@ -3,17 +3,18 @@ import reducer, { initialState} from '../state/reducer';
 import {newMessage} from '../state/actions';
 import PublishMessage from './PublishMessage'
 import MessageBoard from './MessageBoard';
+import Context from '../context';
 
 function App (){
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <div>
+        <Context.Provider value={{state, dispatch }}>
             <h2>Reaction</h2>
             <hr />
-            <PublishMessage dispatch={dispatch} />
-            <MessageBoard messages={state.messages} />
-        </div>
+            <PublishMessage />
+            <MessageBoard />
+        </Context.Provider>
     )
 }
 
