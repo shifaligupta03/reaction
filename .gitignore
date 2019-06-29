@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+src/pubnub.config.json
 
 # testing
 /coverage
