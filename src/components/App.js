@@ -4,6 +4,7 @@ import PubSub from  '../pubsub';
 import PublishMessage from './PublishMessage'
 import MessageBoard from './MessageBoard';
 import Context from '../context';
+import SetUsername from './SetUsername';
 
 const pubsub = new PubSub();
 
@@ -28,6 +29,7 @@ function App (){
     return (
         <Context.Provider value={{state, dispatch, pubsub }}>
             <h2>Reaction</h2>
+            <SetUsername />
             <hr />
             <PublishMessage />
             <MessageBoard />
